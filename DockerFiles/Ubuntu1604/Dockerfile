@@ -32,6 +32,10 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
 	powershell
 
+# Install Unzip package
+RUN apt-get install -y \
+		unzip
+
 # Copy UCS PowerTool Suite binaries from local system
 RUN mkdir -p ~/.local/share/powershell/Modules
 RUN mkdir -p ~/.config/powershell/
