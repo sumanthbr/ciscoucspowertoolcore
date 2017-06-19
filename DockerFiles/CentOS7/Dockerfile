@@ -28,7 +28,7 @@ RUN yum install -y \
 		unzip
 
 # Install Lib Curl required for the PowerShell
-ADD ftp://ftp.pbone.net/mirror/ftp5.gwdg.de/pub/opensuse/repositories/home:/Scott_Cantor/CentOS_7/x86_64/libcurl-openssl-7.43.0-1.1.x86_64.rpm /tmp
+RUN curl ftp://ftp.pbone.net/mirror/ftp5.gwdg.de/pub/opensuse/repositories/home:/Scott_Cantor/CentOS_7/x86_64/libcurl-openssl-7.43.0-1.1.x86_64.rpm -o /tmp
 RUN yum install -y \
 		/tmp/libcurl-openssl-7.43.0-1.1.x86_64.rpm
 RUN export LD_LIBRARY_PATH=/opt/shibboleth/lib64/:$LD_LIBRARY_PATH
